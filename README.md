@@ -15,7 +15,7 @@ data inicial e uma data final (incluindo ambas).
 ## Alunos integrantes da equipe
 
 * Thiago Soares Mota
-* Nome completo do aluno 2
+* Lucas Santos Rosa
 * Nome completo do aluno 3
 * Nome completo do aluno 4
 * Nome completo do aluno 4
@@ -23,6 +23,5 @@ data inicial e uma data final (incluindo ambas).
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* João Caram Santos de Oliveira
 
