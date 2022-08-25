@@ -16,10 +16,8 @@ data inicial e uma data final (incluindo ambas).
 
 * Thiago Soares Mota
 * Lucas Santos Rosa
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 4
-* Nome completo do aluno 4
+* Matheus Fontes Almeida Moreira Silva
+
 
 ## Professores responsáveis
 
