@@ -3,8 +3,8 @@ import java.text.ParseException;
 public class Compromisso {
 
 
-    private String nome;
-    private DataC dataCompromisso;
+    private static String nome;
+    private static DataC dataCompromisso;
 
     public Compromisso(String name, String dataCompromisso) throws ParseException {
         init(name, dataCompromisso);
@@ -15,10 +15,15 @@ public class Compromisso {
     }
 
     private void init(String nome, String dataCompromisso) throws ParseException {
-        this.nome = nome;
-        this.dataCompromisso = new DataC(dataCompromisso);
+        Compromisso.nome = nome;
+        Compromisso.dataCompromisso = new DataC(dataCompromisso);
     }
 
+    public void imprimirCompromisso() {
+        System.out.println(nome);
+        System.out.println(dataCompromisso.getData());
+
+    }
     //#Region Getters
 
     public String getNome() {
