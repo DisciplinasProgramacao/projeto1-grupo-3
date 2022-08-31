@@ -3,7 +3,7 @@ import org.testng.Assert;
 import java.text.ParseException;
 
 
-public class TestDada {
+public class TestData {
     @Test
     void imprimirCorreto() throws ParseException {
         DataC dataUsuario = new DataC("20/04/2003");

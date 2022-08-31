@@ -2,7 +2,7 @@ import java.util.*;
 import java.text.*;
 
 public class DataC {
-    Date data;
+    private Date data;
 
     DataC(String inputUsuario) throws ParseException {
         init(inputUsuario);
@@ -21,6 +21,10 @@ public class DataC {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         return dateFormat.format(this.data);
     }
+    public Date getData() {
+        return data;
+    }
+
 }
 
 
