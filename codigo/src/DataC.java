@@ -3,6 +3,8 @@ import java.text.*;
 
 public class DataC {
 
+
+
     //#region Atributos
     private Date data;
 
@@ -31,7 +33,6 @@ public class DataC {
     //#endregion
 
 
-
     //#region Métodos
 
     /**
@@ -56,13 +57,14 @@ public class DataC {
     //#endregion
 
 
-
     //#region Getters & Setters
 
     public Date getData() {
         return data;
     }
-
+    public void setData(Date data) {
+        this.data = data;
+    }
     //#endregion
 
 }
