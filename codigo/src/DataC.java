@@ -2,9 +2,7 @@ import java.util.*;
 import java.text.*;
 
 public class DataC {
-
-
-
+    
     //#region Atributos
     private Date data;
 
