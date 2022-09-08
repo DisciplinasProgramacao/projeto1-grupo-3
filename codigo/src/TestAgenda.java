@@ -1,28 +1,23 @@
-import org.junit.jupiter.api.Test;
-
-import java.text.ParseException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+/**
+ * Teste da classe agenda
+ */
 public class TestAgenda {
 
-    //private static Agenda agenda = new Agenda();
-    private static Compromisso compromisso;
+    private static Agenda agenda;
 
-    static {
-        try {
-            compromisso = new Compromisso("Aniversario", "20/04/2003");
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
+    @BeforeAll
+    public static void criarAgenda(){
+        agenda = new Agenda();
     }
 
-
     @Test
-    public void insereNaLista() {
-
-        //agenda.addCompromisso(compromisso);
-        //assertEquals(Agenda.getAgenda().get(0).getNome(), "Aniversario");
+    public void verificaSeAAagendaEstaVazia() {
+        assertEquals(0, agenda.Size());
     }
 
 

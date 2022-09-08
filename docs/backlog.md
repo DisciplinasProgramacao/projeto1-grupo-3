@@ -1,5 +1,5 @@
 | Usuário      | Requisito | Motivação     |
-| :----:        |    :----:   |          :----: |
+| Lucas        |    :----:   |          :----: |
 | Como um XXXXXX, eu quero      | --requsito--       | para...    |
 | Como um XXXXXX, eu quero   | --requisito--         | para...      |
 
