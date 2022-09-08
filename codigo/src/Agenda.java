@@ -68,9 +68,9 @@ public class Agenda {
             LocalDate dataInicial = compromisso.getDataCompromisso();
             String nomeDoEvento = compromisso.getNome();
 
-            for(int i = 0; i < xRepetições; i++){
-                LocalDate newData = dataInicial.plusDays(aCadaXdias);
-                Compromisso c = new Compromisso(nomeDoEvento, newData);
+            for(int i = 0; i < xRepetições-1; i++){
+                dataInicial = dataInicial.plusDays(aCadaXdias);
+                Compromisso c = new Compromisso(nomeDoEvento, dataInicial);
                 Agenda.add(c);
             }
         }

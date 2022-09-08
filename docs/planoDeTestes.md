@@ -11,7 +11,7 @@
   - verificaSeAAagendaEstaVazia
 2. Testa a adição de um compromisso na agenda
   - testandoAdicaoDeUmCompromisso
-3. 
- -
+3. Testa se a incerção de compromissos periodicos funciona
+ - testaAdicaoDeEventoPeriodoco
 
 e assim sucessivamente.
