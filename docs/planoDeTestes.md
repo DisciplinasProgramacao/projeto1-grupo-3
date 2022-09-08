@@ -9,7 +9,9 @@
 ## TestAgenda:
 1. Verifica se agenda está vazia
   - verificaSeAAagendaEstaVazia
-2. Objetivo do teste 2
-  - nome do método 2
+2. Testa a adição de um compromisso na agenda
+  - testandoAdicaoDeUmCompromisso
+3. 
+ -
 
 e assim sucessivamente.

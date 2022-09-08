@@ -54,6 +54,17 @@ public class Compromisso {
     }
 
     /**
+     * Inicializa o objeto compromisso a Partir de uma String nome e uma LocalDate com a data do compromisso.
+     *
+     * @param name Espera uma String para atribuir ao objeto compromisso
+     * @param data Espera uma LocalDate ao parametro dataCompromisso
+     */
+    public Compromisso(String name, LocalDate data) {
+        this.nome = name;
+        this.dataCompromisso = data;
+    }
+
+    /**
      * Inicializa o objeto compromisso com o valor de nome "Não Iniciado" e a Data "01/01/2022"
      */
     public Compromisso() throws ParseException {
@@ -73,6 +84,34 @@ public class Compromisso {
     public String toString() {
         return this.nome + " - " + formatter.format(this.dataCompromisso);
     }
+
+    //
+    /**
+     *  Overriding equals() to compare two Compromisso objects
+     * @param o um tipo Object
+     * @return TRUE caso os objetos sejam iguais e FALSE caso contrario
+     */
+    @Override
+    public boolean equals(Object o) {
+ 
+        // If the object is compared with itself then return true 
+        if (o == this) {
+            return true;
+        }
+ 
+        /* Check if o is an instance of Compromisso or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Compromisso)) {
+            return false;
+        }
+         
+        // typecast o to Complex so that we can compare data members
+        Compromisso c = (Compromisso) o;
+         
+        // Compare the data members and return accordingly
+        return this.nome.equals(c.getNome()) && this.dataCompromisso.isEqual(c.getDataCompromisso());
+    }
+ 
     //#endregion
 
     //#Region Getters

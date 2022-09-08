@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 /** 
@@ -32,6 +34,7 @@ public class Agenda {
     //#region atributos
 
     private List<Compromisso> Agenda;
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     //#endregion
 
@@ -46,11 +49,66 @@ public class Agenda {
      * Retorna o tamanho atual da List Agenda
      * @return O tamanho atual da Agenda (int)
      */
-    public int Size() {
+    public int size() {
         return Agenda.size();
     }
 
-    
+    /**
+     * Adiciona compromisso a agenda, podendo ser adicionado periodicamente.
+     * @param compromisso Objeto compromisso a ser adcionado
+     * @param aCadaXdias Numero de dias em que o compromisso se repetira
+     * @param xRepetições Número de repetições do compromisso
+     */
+    public void AddCompromisso(Compromisso compromisso, int aCadaXdias, int xRepetições){
+        
+        Agenda.add(compromisso);
+
+        if(aCadaXdias != 0 && xRepetições != 0){
+            
+            LocalDate dataInicial = compromisso.getDataCompromisso();
+            String nomeDoEvento = compromisso.getNome();
+
+            for(int i = 0; i < xRepetições; i++){
+                LocalDate newData = dataInicial.plusDays(aCadaXdias);
+                Compromisso c = new Compromisso(nomeDoEvento, newData);
+                Agenda.add(c);
+            }
+        }
+        else if( (aCadaXdias == 0 && xRepetições != 0) || (aCadaXdias !=0 && xRepetições == 0) ){
+            throw new IllegalArgumentException("Não pode haver um parametro de repetição igual a zero e outro diferente de zero");
+        }
+    }
+
+    /**
+     * Adiciona compromisso a agenda, podendo ser adicionado periodicamente.
+     * @param dataInicial String com data incial no formato dd/MM/yyy
+     * @param dataFinal String com data final no formato dd/MM/yyy
+     * @return Uma List<Compromisso>
+     */
+    public List<Compromisso> getCompromissos(String dataInicial, String dataFinal){
+       return getCompromissos(LocalDate.parse(dataInicial, formatter), LocalDate.parse(dataFinal, formatter));
+    }
+
+    /**
+     * Adiciona compromisso a agenda, podendo ser adicionado periodicamente.
+     * @param dataInicial LocalDate com a data incial
+     * @param dataFinal LocalDate a com data final
+     * @return Uma List<Compromisso>
+     */
+    public List<Compromisso> getCompromissos(LocalDate dataInicial, LocalDate dataFinal){
+
+        List<Compromisso> subLista = new ArrayList<>();
+
+        for (Compromisso compromisso : Agenda) {
+            
+            LocalDate dataDoCompromisso = compromisso.getDataCompromisso();
+
+            if( (dataDoCompromisso.isEqual(dataInicial) || dataDoCompromisso.isEqual(dataFinal)) || (dataDoCompromisso.isAfter(dataInicial) && dataDoCompromisso.isBefore(dataFinal))){
+                subLista.add(compromisso);
+            }
+        }
+        return subLista;
+    }
     
 }
 
