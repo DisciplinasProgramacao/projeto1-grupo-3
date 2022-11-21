@@ -12,6 +12,24 @@ repetir a cada 7 dias por 15 vezes.
 * Fornecer um relatório de compromissos entre uma
 data inicial e uma data final (incluindo ambas). 
 
+# Correção
+
+# Diagrama de classes: 1,2/2 pontos 
+	- notação incorreta de agregação/composição
+	- nome de classe diferente da implementação
+	
+# Requisitos corretamente implementados: 8/9 pontos 
+	- cuidado ao dar nome de atributo igual ao da classe!! 
+	- ao retornar uma lista de compromissos, a Agenda obriga a quem precisa do relatório de datas saber usar o Compromisso.
+	
+# Documentação de código: 4/4 pontos 
+	
+# Testes: 3,8/5 pontos
+	- assert de testandoAdicaoDeUmCompromisso usa o método que quer verificar (construtor)
+	- usem FOR para ações repetidas no teste (5 compromissos manualmente criados??)
+	- não entendi muito bem o teste testaAdicaoDeEventoPeriodoco. No final, o assert é dado no tamanho da agenda
+	
+
 ## Alunos integrantes da equipe
 
 * Thiago Soares Mota
